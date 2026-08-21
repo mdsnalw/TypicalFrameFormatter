@@ -2,11 +2,11 @@
 
 
 a = Analysis(
-    ['video_frame_extractor_gui_v14.py'],
+    ['video_frame_extractor_gui_v15.py'],
     pathex=[],
     binaries=[],
-    datas=[('logo.ico', '.')],
-    hiddenimports=[],
+    datas=[],
+    hiddenimports=['auto_detect_obsidian', 'pyautogui', 'pygetwindow'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
