@@ -6,8 +6,8 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
-downloads/
+# dist/ 保留用于 releases
+#downloads/
 eggs/
 .eggs/
 lib/
