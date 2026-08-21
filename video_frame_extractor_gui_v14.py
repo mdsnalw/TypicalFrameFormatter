@@ -4,8 +4,10 @@
 使用批处理文件调用 ffmpeg 以避免路径问题
 """
 
+import os
 import re
 import subprocess
+import sys
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from pathlib import Path
@@ -308,8 +310,19 @@ class VideoFrameExtractorGUI:
         self.progress['value'] = 0
 
 
+def resource_path(relative_path):
+    """获取资源文件的真实路径，兼容 PyInstaller onefile 打包"""
+    base = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base, relative_path)
+
+
 def main():
     root = tk.Tk()
+    # 设置窗口图标，使程序运行时任务栏显示新 logo
+    try:
+        root.iconbitmap(resource_path('logo.ico'))
+    except Exception as e:
+        print(f"设置窗口图标失败: {e}")
     app = VideoFrameExtractorGUI(root)
     root.mainloop()
 

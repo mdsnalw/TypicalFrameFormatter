@@ -43,3 +43,12 @@ logs/
 
 # Dependencies
 node_modules/
+
+# Build artifacts (keep dist/ for releases)
+.workbuddy/
+build_py312/
+*.spec.bak
+
+# Temporary verification scripts
+verify_*.py
+convert_to_ico.py
