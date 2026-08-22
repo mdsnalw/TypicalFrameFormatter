@@ -64,6 +64,9 @@ class VideoFrameExtractorGUI:
         print(f"使用 ffmpeg: {self.ffmpeg_exe}")
         self.create_widgets()
         
+        # 启动时自动计算图片文件夹编号
+        self._update_folder_number()
+        
         # 延迟启动自动检测，避免与UI初始化冲突
         self.root.after(500, self.auto_detect_obsidian_file)
         
